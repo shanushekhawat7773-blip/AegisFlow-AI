@@ -1,0 +1,31 @@
+{
+  "scenario_id": "WH-03-ORD_SCANNER_OUTAGE",
+  "name": "Warehouse 03 — Scanner Cluster Outage & Sorting Degradation",
+  "facility_id": "WH-03-ORD",
+  "facility_name": "Chicago Mega-Inbound Gateway",
+  "severity": "P1_CRITICAL",
+  "description": "Interface buffer overrun on Core Switch SW-03 drops packets to Scanner Gateway Rack 08, triggering 34.2% HTTP 504 timeouts, braking Induction Lines 4-6, and escalating buffer queue to 4,820 parcels.",
+  "baseline": {
+    "throughput_orders_hr": 1600.0,
+    "queue_depth_parcels": 850,
+    "scanner_availability_pct": 99.1,
+    "network_latency_ms": 18.0,
+    "packet_loss_pct": 0.04,
+    "sla_breach_risk_pct": 2.5
+  },
+  "incident_peak": {
+    "throughput_orders_hr": 780.0,
+    "queue_depth_parcels": 4820,
+    "scanner_availability_pct": 48.2,
+    "network_latency_ms": 124.6,
+    "packet_loss_pct": 4.82,
+    "sla_breach_risk_pct": 88.5
+  },
+  "root_cause": {
+    "device": "Arista Core Switch SW-03",
+    "port": "TenGigE0/1/24",
+    "mechanism": "Micro-burst input buffer exhaustion resulting in frame discard cascading into HTTP 504 connection drops."
+  },
+  "recommended_action": "traffic.reroute_processing_queue",
+  "recommended_scenario_id": "SCENARIO_B_REROUTE"
+}

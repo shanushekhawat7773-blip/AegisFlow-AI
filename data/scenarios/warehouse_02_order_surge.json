@@ -1,0 +1,29 @@
+{
+  "scenario_id": "WH-02-DFW_ORDER_SURGE",
+  "name": "Warehouse 02 — Flash Order Surge & Queue Saturation",
+  "facility_id": "WH-02-DFW",
+  "facility_name": "Dallas Sortation Center",
+  "severity": "P2_HIGH",
+  "description": "Unscheduled cross-dock supplier arrivals saturate inbound staging lanes 12-18, pushing queue depth to 3,450 units (+210% over nominal capacity).",
+  "baseline": {
+    "throughput_orders_hr": 1400.0,
+    "queue_depth_parcels": 1100,
+    "scanner_availability_pct": 97.8,
+    "network_latency_ms": 22.5,
+    "packet_loss_pct": 0.08,
+    "sla_breach_risk_pct": 4.8
+  },
+  "incident_peak": {
+    "throughput_orders_hr": 1380.0,
+    "queue_depth_parcels": 3450,
+    "scanner_availability_pct": 96.5,
+    "network_latency_ms": 38.0,
+    "packet_loss_pct": 0.15,
+    "sla_breach_risk_pct": 44.0
+  },
+  "root_cause": {
+    "device": "WMS Inbound Staging Zone 3",
+    "mechanism": "Truck arrival velocity exceeds physical barcode verification bandwidth."
+  },
+  "recommended_action": "workforce.rebalance_stations"
+}

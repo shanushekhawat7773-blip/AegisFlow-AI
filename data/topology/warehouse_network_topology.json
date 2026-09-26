@@ -1,0 +1,25 @@
+{
+  "topology_version": "2.4.0",
+  "facility_id": "WH-03-ORD",
+  "facility_name": "Chicago Mega-Inbound Gateway",
+  "zones": [
+    {
+      "zone_id": "ZONE-INDUCT-NORTH",
+      "subsystems": ["Lines 1-3 Induction", "Auxiliary Diverter Gates"],
+      "controller": "ord-plc-north-01",
+      "status": "nominal"
+    },
+    {
+      "zone_id": "ZONE-INDUCT-SOUTH",
+      "subsystems": ["Lines 4-6 Induction", "Primary Optical Barcode Scanners", "Core Switch SW-03"],
+      "controller": "ord-plc-south-02",
+      "status": "degraded"
+    },
+    {
+      "zone_id": "ZONE-SORT-BUFFER",
+      "subsystems": ["Central Buffer Staging Conveyor", "Photo-Eye Sensor Matrix"],
+      "controller": "ord-plc-buffer-03",
+      "status": "accumulating"
+    }
+  ]
+}

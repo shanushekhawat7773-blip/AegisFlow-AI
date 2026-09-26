@@ -1,0 +1,14 @@
+{
+  "scenario_id": "BASELINE_NOMINAL",
+  "name": "Fulfillment Network — Nominal Baseline State",
+  "facility_id": "ALL",
+  "facility_name": "All 4 Fulfillment Hubs",
+  "severity": "NOMINAL",
+  "description": "All regional hubs operating within nominal throughput boundaries with zero active anomalies and 99.4% overall health.",
+  "facilities": [
+    { "facility_id": "WH-01-SEA", "throughput": 1250.0, "status": "healthy" },
+    { "facility_id": "WH-02-DFW", "throughput": 1400.0, "status": "healthy" },
+    { "facility_id": "WH-03-ORD", "throughput": 1600.0, "status": "healthy" },
+    { "facility_id": "WH-04-ATL", "throughput": 980.0, "status": "healthy" }
+  ]
+}

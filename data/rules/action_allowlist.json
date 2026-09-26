@@ -1,0 +1,46 @@
+{
+  "allowlist_version": "1.2.0",
+  "enforcement_mode": "STRICT_ALLOWLIST",
+  "actions": [
+    {
+      "action_type": "traffic.reroute_processing_queue",
+      "risk_tier": "MEDIUM",
+      "approvals_required": 1,
+      "permitted_roles": ["OPERATOR", "ANALYST", "ADMINISTRATOR"],
+      "requires_mtls": true,
+      "reversible": true
+    },
+    {
+      "action_type": "cluster.restart_scanner_service",
+      "risk_tier": "LOW",
+      "approvals_required": 0,
+      "permitted_roles": ["OPERATOR", "ANALYST", "ADMINISTRATOR"],
+      "requires_mtls": true,
+      "reversible": true
+    },
+    {
+      "action_type": "workforce.rebalance_stations",
+      "risk_tier": "LOW",
+      "approvals_required": 1,
+      "permitted_roles": ["OPERATOR", "ADMINISTRATOR"],
+      "requires_mtls": false,
+      "reversible": true
+    },
+    {
+      "action_type": "network.isolate_switch_port",
+      "risk_tier": "HIGH",
+      "approvals_required": 2,
+      "permitted_roles": ["SECURITY_ADMIN", "ADMINISTRATOR"],
+      "requires_mtls": true,
+      "reversible": false
+    },
+    {
+      "action_type": "system.throttle_inbound_intake",
+      "risk_tier": "HIGH",
+      "approvals_required": 2,
+      "permitted_roles": ["ADMINISTRATOR"],
+      "requires_mtls": true,
+      "reversible": true
+    }
+  ]
+}
